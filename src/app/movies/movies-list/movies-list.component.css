@@ -1,0 +1,5 @@
+.movie-container{
+  box-shadow: 2px 3px 6px rgba(0,0,0, .360);
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
