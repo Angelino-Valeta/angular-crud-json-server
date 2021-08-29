@@ -17,6 +17,9 @@ export class EmployeeDashboardComponent implements OnInit {
 
   employeeData: any;
 
+  showAddBtn !: boolean;
+  showUpdateBtn !: boolean;
+
   constructor(private formBuilber: FormBuilder, private api: ApiService) { }
 
   ngOnInit(): void {
@@ -32,6 +35,8 @@ export class EmployeeDashboardComponent implements OnInit {
   }
 
   postEmployeeDetails(){
+    this.showAddBtn = true;
+
     this.employeeModelObj.firstName = this.formValue.value.firstName;
     this.employeeModelObj.lastName = this.formValue.value.lastName;
     this.employeeModelObj.email = this.formValue.value.email;
@@ -51,18 +56,50 @@ export class EmployeeDashboardComponent implements OnInit {
 
   }
 
+  showButtonsAddAndUpdate(){
+    this.showAddBtn = true;
+    this.showUpdateBtn = false;
+  }
+
   getAllEmployee(){
     this.api.getEmployee()
     .subscribe(res => {
-      console.log(res)
       this.employeeData = res;
     })
   }
 
   deleteEmployee(row : any){
     this.api.deleteEmployee(row.id).subscribe(res => {
-      alert("Employee deleted")
       this.getAllEmployee()
+      alert("Employee deleted")
+    })
+  }
+
+  onEdit(row : any){
+    this.showUpdateBtn = true;
+    this.showAddBtn = false
+
+    this.employeeModelObj.id = row.id;
+    this.formValue.controls['firstName'].setValue(row.firstName);
+    this.formValue.controls['lastName'].setValue(row.lastName);
+    this.formValue.controls['email'].setValue(row.email);
+    this.formValue.controls['mobile'].setValue(row.mobile);
+    this.formValue.controls['salary'].setValue(row.salary)
+  }
+
+  updateEmployeeDetails(){
+    this.employeeModelObj.firstName = this.formValue.value.firstName;
+    this.employeeModelObj.lastName = this.formValue.value.lastName;
+    this.employeeModelObj.email = this.formValue.value.email;
+    this.employeeModelObj.mobile = this.formValue.value.mobile;
+    this.employeeModelObj.salary = this.formValue.value.salary;
+
+    this.api.updateEmployee(this.employeeModelObj, this.employeeModelObj.id).subscribe(res => {
+      alert("Update successfully");
+      let ref = document.getElementById("cancel");
+      ref?.click()
+      this.formValue.reset();
+      this.getAllEmployee();
     })
   }
 

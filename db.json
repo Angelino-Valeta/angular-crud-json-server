@@ -9,20 +9,28 @@
       "salary": "81.000"
     },
     {
-      "id": 4,
-      "firstName": "Avelina ",
-      "lastName": "Kavange",
-      "email": "avelinakavange@gmail.com",
-      "mobile": "993333333",
-      "salary": "55.000"
-    },
-    {
       "id": 6,
       "firstName": "Raúl ",
       "lastName": "Manuel",
-      "email": "raulmanuel@honline.ao",
+      "email": "raulmanuel@gmail.com",
       "mobile": "988888883",
       "salary": "150.000"
+    },
+    {
+      "id": 7,
+      "firstName": "Jovany",
+      "lastName": "Negócio",
+      "email": "jovanynegocio@gmail.com",
+      "mobile": "9888383838",
+      "salary": "500.000"
+    },
+    {
+      "id": 8,
+      "firstName": "Justino",
+      "lastName": "Valelta",
+      "email": "justinovaleta@gmail.com",
+      "mobile": "12233838",
+      "salary": "120.000"
     }
   ],
   "comments": [],

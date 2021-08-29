@@ -2,7 +2,7 @@
   <div class="container-fluid">
     <h2 class="text-primary">Angular Crud</h2>
     <div class="d-flex">
-      <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modalEmployee">Add Employee</button>
+      <button type="button" (click)="showButtonsAddAndUpdate()" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modalEmployee">Add Employee</button>
     </div>
   </div>
 </nav>
@@ -27,7 +27,7 @@
       <td>{{  row.mobile  }}</td>
       <td>{{  row.salary  }}</td>
       <td>
-        <button class="btn btn-primary">Edit</button>
+        <button (click)="onEdit(row)" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEmployee">Edit</button>
         <button (click)="deleteEmployee(row)" class="btn btn-danger mx-3">Delete</button>
       </td>
     </tr>
@@ -68,7 +68,8 @@
       </div>
       <div class="modal-footer">
         <button type="button" id="cancel" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" (click)="postEmployeeDetails()" class="btn btn-primary">Save</button>
+        <button type="button" *ngIf="showAddBtn" (click)="postEmployeeDetails()" class="btn btn-primary">Save</button>
+        <button type="button" *ngIf="showUpdateBtn" (click)="updateEmployeeDetails()" class="btn btn-primary">Update</button>
       </div>
     </div>
 
