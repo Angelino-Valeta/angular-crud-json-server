@@ -1,8 +1,35 @@
 <nav class="navbar shadow mb-5 rounded">
-  <div class="container-fuild">
+  <div class="container-fluid">
+    <h2 class="text-primary">Angular Crud</h2>
     <div class="d-flex">
-      <h1>Crud</h1>
       <button type="button" class="btn btn-outline-primary">Add Employee</button>
     </div>
   </div>
 </nav>
+<table class="table">
+  <thead>
+    <tr>
+      <th escope="col">Employee ID</th>
+      <th escope="col">Firs Name</th>
+      <th escope="col">Last Name</th>
+      <th escope="col">Email ID</th>
+      <th escope="col">Mobile No.</th>
+      <th escope="col">Salary</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Angelino</td>
+      <td>Valeta</td>
+      <td>angelino.valeta@gmail.com</td>
+      <td>+244 993 740 188</td>
+      <td>81000</td>
+      <td>
+        <button class="btn btn-primary">Edit</button>
+        <button class="btn btn-danger mx-3">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
