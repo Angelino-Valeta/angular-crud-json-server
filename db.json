@@ -1,25 +1,12 @@
 {
   "posts": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    },
-    {
       "id": 2,
       "firstName": "Angelino",
       "lastName": "Valeta",
       "email": "angelinovaleta@gmail.com",
       "mobile": "993740188",
       "salary": "81.000"
-    },
-    {
-      "id": 3,
-      "firstName": "Angelino",
-      "lastName": "Valeta",
-      "email": "angelinovaleta@gmail.com",
-      "mobile": "993740188",
-      "salary": ""
     },
     {
       "id": 4,
@@ -30,21 +17,15 @@
       "salary": "55.000"
     },
     {
-      "id": 5,
-      "firstName": "Helena ",
-      "lastName": "Chilala",
-      "email": "helena@gmail.com",
-      "mobile": "9988877766",
-      "salary": "20.000"
+      "id": 6,
+      "firstName": "Raúl ",
+      "lastName": "Manuel",
+      "email": "raulmanuel@honline.ao",
+      "mobile": "988888883",
+      "salary": "150.000"
     }
   ],
-  "comments": [
-    {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
-    }
-  ],
+  "comments": [],
   "profile": {
     "name": "typicode"
   }
