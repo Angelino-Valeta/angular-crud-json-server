@@ -15,6 +15,8 @@ export class EmployeeDashboardComponent implements OnInit {
 
   employeeModelObj : EmployeeModel = new EmployeeModel();
 
+  employeeData: any;
+
   constructor(private formBuilber: FormBuilder, private api: ApiService) { }
 
   ngOnInit(): void {
@@ -25,6 +27,8 @@ export class EmployeeDashboardComponent implements OnInit {
       mobile: [''],
       salary: ['']
     })
+    //console.log(this.employeeData)
+    this.getAllEmployee();
   }
 
   postEmployeeDetails(){
@@ -36,11 +40,22 @@ export class EmployeeDashboardComponent implements OnInit {
 
     this.api.postEmployee(this.employeeModelObj).subscribe(res => {
       console.log(res)
-      alert("Employee addes successfully")
+      alert("Employee added successfully")
+      let ref = document.getElementById("cancel");
+      ref?.click()
+      this.formValue.reset();
     }, err => {
       alert("Something went wrong");
     })
 
+  }
+
+  getAllEmployee(){
+    this.api.getEmployee()
+    .subscribe(res => {
+      console.log(res)
+      this.employeeData = res;
+    })
   }
 
 }
